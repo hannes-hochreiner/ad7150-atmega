@@ -1,0 +1,339 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:ad7150-atmega
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ATMEGA328P-P IC1
+U 1 1 573E061E
+P 5700 3450
+F 0 "IC1" H 4950 4700 50  0000 L BNN
+F 1 "ATMEGA328P-P" H 6100 2050 50  0000 L BNN
+F 2 "DIL28" H 5700 3450 50  0000 C CIN
+F 3 "" H 5700 3450 50  0000 C CNN
+	1    5700 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L AD7150 AD1
+U 1 1 573E0699
+P 9650 3450
+F 0 "AD1" H 10000 3000 60  0000 C CNN
+F 1 "AD7150" H 9650 3450 60  0000 C CNN
+F 2 "" H 9400 3450 60  0000 C CNN
+F 3 "" H 9400 3450 60  0000 C CNN
+	1    9650 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L BusPirate BP1
+U 1 1 573E06CA
+P 2550 3200
+F 0 "BP1" H 2950 2750 60  0000 C CNN
+F 1 "BusPirate" H 2550 3200 60  0000 C CNN
+F 2 "" H 2550 3200 60  0000 C CNN
+F 3 "" H 2550 3200 60  0000 C CNN
+	1    2550 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 2900 3250 2900
+Wire Wire Line
+	4250 2050 4250 2900
+Wire Wire Line
+	4250 2350 4800 2350
+Wire Wire Line
+	4800 2650 4250 2650
+Connection ~ 4250 2650
+Wire Wire Line
+	1850 2900 1500 2900
+Wire Wire Line
+	1500 2900 1500 4550
+Wire Wire Line
+	1500 4550 4800 4550
+Wire Wire Line
+	4800 4650 4700 4650
+Wire Wire Line
+	4700 4550 4700 4900
+Connection ~ 4700 4550
+Wire Wire Line
+	9000 3150 7550 3150
+Wire Wire Line
+	7550 3150 7550 4900
+Wire Wire Line
+	7550 4900 4700 4900
+Connection ~ 4700 4650
+Entry Bus Bus
+	10300 3150 10400 3250
+Entry Bus Bus
+	10300 3300 10400 3400
+Wire Bus Line
+	6850 3700 6850 4150
+Wire Bus Line
+	6850 4150 10400 4150
+Wire Bus Line
+	10400 4150 10400 3250
+Text Label 10300 3150 0    60   ~ 0
+SDA
+Text Label 10300 3300 0    60   ~ 0
+SCL
+Text Label 6700 3600 0    60   ~ 0
+SDA
+Text Label 6700 3700 0    60   ~ 0
+SCL
+$Comp
+L CTRIM C2
+U 1 1 573E081B
+P 8250 3600
+F 0 "C2" H 8310 3520 50  0000 C CNN
+F 1 "CTRIM" H 8370 3460 50  0000 C CNN
+F 2 "" H 8250 3600 50  0000 C CNN
+F 3 "" H 8250 3600 50  0000 C CNN
+	1    8250 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CTRIM C3
+U 1 1 573E085E
+P 8600 3750
+F 0 "C3" H 8660 3670 50  0000 C CNN
+F 1 "CTRIM" H 8720 3610 50  0000 C CNN
+F 2 "" H 8600 3750 50  0000 C CNN
+F 3 "" H 8600 3750 50  0000 C CNN
+	1    8600 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 3450 8250 3450
+Wire Wire Line
+	8250 3750 9000 3750
+Wire Wire Line
+	9000 3600 8600 3600
+Wire Wire Line
+	8600 3900 10300 3900
+Wire Wire Line
+	10300 3900 10300 3750
+Wire Wire Line
+	7800 3300 9000 3300
+Wire Wire Line
+	7900 3300 7900 2050
+Wire Wire Line
+	7900 2050 4250 2050
+Connection ~ 4250 2350
+$Comp
+L R R1
+U 1 1 573E0AA5
+P 7250 2550
+F 0 "R1" V 7330 2550 50  0000 C CNN
+F 1 "10k" V 7250 2550 50  0000 C CNN
+F 2 "" V 7180 2550 50  0000 C CNN
+F 3 "" H 7250 2550 50  0000 C CNN
+	1    7250 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 2400 7250 2050
+Connection ~ 7250 2050
+Wire Wire Line
+	7250 2700 7250 5100
+Wire Wire Line
+	6700 3800 7250 3800
+Wire Wire Line
+	1850 3500 1850 5100
+Wire Wire Line
+	1850 5100 7250 5100
+Connection ~ 7250 3800
+Entry Wire Line
+	6850 2650 6950 2750
+Entry Wire Line
+	6850 2750 6950 2850
+Entry Wire Line
+	6850 2850 6950 2950
+Entry Wire Line
+	3500 3350 3600 3450
+Entry Wire Line
+	3500 3500 3600 3600
+Entry Wire Line
+	3500 3800 3600 3900
+Wire Bus Line
+	6950 2750 6950 5000
+Wire Bus Line
+	6950 5000 3600 5000
+Wire Bus Line
+	3600 5000 3600 3450
+Wire Wire Line
+	6850 2650 6700 2650
+Wire Wire Line
+	6850 2750 6700 2750
+Wire Wire Line
+	6850 2850 6700 2850
+Text Label 6700 2850 0    60   ~ 0
+SCK
+Text Label 6700 2750 0    60   ~ 0
+MISO
+Text Label 6700 2650 0    60   ~ 0
+MOSI
+Text Label 3250 3350 0    60   ~ 0
+MOSI
+Text Label 3250 3500 0    60   ~ 0
+MISO
+Wire Wire Line
+	3250 3350 3500 3350
+Wire Wire Line
+	3500 3500 3250 3500
+Wire Wire Line
+	3500 3800 1700 3800
+Wire Wire Line
+	1700 3800 1700 3350
+Wire Wire Line
+	1700 3350 1850 3350
+Entry Wire Line
+	6750 3600 6850 3700
+Entry Wire Line
+	6750 3700 6850 3800
+Wire Wire Line
+	6750 3700 6700 3700
+Wire Wire Line
+	6750 3600 6700 3600
+$Comp
+L C C1
+U 1 1 573E10B1
+P 7600 2800
+F 0 "C1" H 7625 2900 50  0000 L CNN
+F 1 "C" H 7625 2700 50  0000 L CNN
+F 2 "" H 7638 2650 50  0000 C CNN
+F 3 "" H 7600 2800 50  0000 C CNN
+	1    7600 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 2650 7900 2650
+Connection ~ 7900 2650
+Wire Wire Line
+	7600 2950 7600 3150
+Connection ~ 7600 3150
+Entry Wire Line
+	7800 4050 7900 4150
+Entry Wire Line
+	7950 4050 8050 4150
+$Comp
+L R R2
+U 1 1 573E1252
+P 7800 3700
+F 0 "R2" V 7880 3700 50  0000 C CNN
+F 1 "1k5" V 7800 3700 50  0000 C CNN
+F 2 "" V 7730 3700 50  0000 C CNN
+F 3 "" H 7800 3700 50  0000 C CNN
+	1    7800 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 573E127B
+P 7950 3700
+F 0 "R3" V 8030 3700 50  0000 C CNN
+F 1 "1k5" V 7950 3700 50  0000 C CNN
+F 2 "" V 7880 3700 50  0000 C CNN
+F 3 "" H 7950 3700 50  0000 C CNN
+	1    7950 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 3850 7800 4050
+Wire Wire Line
+	7950 4050 7950 3850
+Wire Wire Line
+	7950 3550 7950 3300
+Connection ~ 7950 3300
+Wire Wire Line
+	7800 3550 7800 3300
+Connection ~ 7900 3300
+NoConn ~ 6700 4650
+NoConn ~ 6700 4550
+NoConn ~ 6700 4450
+NoConn ~ 6700 4350
+NoConn ~ 6700 4250
+NoConn ~ 6700 4150
+NoConn ~ 6700 3500
+NoConn ~ 6700 3400
+NoConn ~ 6700 3300
+NoConn ~ 6700 3200
+NoConn ~ 6700 3050
+NoConn ~ 6700 2950
+NoConn ~ 6700 2550
+NoConn ~ 6700 2450
+NoConn ~ 6700 2350
+NoConn ~ 4800 2950
+Text Label 7950 3900 0    60   ~ 0
+SDA
+Text Label 7800 3900 0    60   ~ 0
+SCK
+NoConn ~ 3250 3200
+NoConn ~ 3250 3050
+NoConn ~ 1850 3050
+NoConn ~ 1850 3200
+NoConn ~ 10300 3600
+NoConn ~ 10300 3450
+Text Label 1850 3350 2    60   ~ 0
+SCK
+Entry Wire Line
+	6850 4200 6950 4300
+Entry Wire Line
+	6850 4300 6950 4400
+Wire Wire Line
+	6850 4200 6800 4200
+Wire Wire Line
+	6800 4200 6800 3950
+Wire Wire Line
+	6800 3950 6700 3950
+Wire Wire Line
+	6700 4050 6750 4050
+Wire Wire Line
+	6750 4050 6750 4300
+Wire Wire Line
+	6750 4300 6850 4300
+Text Label 6700 3950 0    60   ~ 0
+MOSI
+Text Label 6700 4050 0    60   ~ 0
+MISO
+$EndSCHEMATC
