@@ -1,1 +1,4 @@
 kicad/*.bak
+src/*.gch
+bld
+notes.txt
