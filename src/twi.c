@@ -89,7 +89,7 @@ int twi_read(const char const* address, char* data, int length) {
   return 0;
 }
 
-int twi_write(const char const* address, const char const* data) {
+int twi_write(const char const* address, const char const* data, int length) {
   // set slave address plus write
   TWDR = *address & ~0x01;
   // send address
@@ -100,14 +100,21 @@ int twi_write(const char const* address, const char const* data) {
   if ((TWSR & 0xF8) != TWI_SLAW_ACK) {
     return -1;
   }
-  // set data
-  TWDR = *data;
-  // send data
-  TWCR = (1<<TWINT) | (1<<TWEN);
-  // wait for completion flag
-  while (!(TWCR & (1<<TWINT)));
-  // check twi status register
-  return (TWSR & 0xF8) != TWI_DATAW_ACK ? -1 : 0;
+
+  for (int cntr = 0; cntr < length; cntr++) {
+    // set data
+    TWDR = *(data + cntr);
+    // send data
+    TWCR = (1<<TWINT) | (1<<TWEN);
+    // wait for completion flag
+    while (!(TWCR & (1<<TWINT)));
+    // check twi status register
+    if ((TWSR & 0xF8) != TWI_DATAW_ACK) {
+      return -1;
+    }
+  }
+
+  return 0;
 }
 
 int twi_stop() {

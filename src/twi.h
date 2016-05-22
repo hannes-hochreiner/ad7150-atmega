@@ -39,7 +39,7 @@ int twi_enable();
 int twi_disable();
 int twi_start();
 int twi_read(const char const* address, char* data, int length);
-int twi_write(const char const* address, const char const* data);
+int twi_write(const char const* address, const char const* data, int length);
 int twi_stop();
 
 #endif
